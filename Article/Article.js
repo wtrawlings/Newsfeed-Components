@@ -100,11 +100,6 @@ const data = [{
 
   Hint: You will need to use createElement more than once here!
 
-Ok Warren so lets just make a component and build it that way from there. First- where is the component going to land.
-The component is article
-you feed your component data[] with the different article{five parts in each}
-
-
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
@@ -117,6 +112,7 @@ you feed your component data[] with the different article{five parts in each}
 
 */
 function createArticle(dataSource) {
+
     let articleDiv = document.createElement('div')
     articleDiv.classList.add('article')
     let articleTitle = document.createElement('h2')
@@ -142,6 +138,7 @@ function createArticle(dataSource) {
     articleDiv.appendChild(para3)
 
     return articleDiv
+
 }
-createArticle(data[0])
-    //This needs to be a data.forEach  possible MAP  that will make an array of nodes to push out.
+
+data.forEach(createArticle())
