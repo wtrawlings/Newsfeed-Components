@@ -104,52 +104,6 @@ Ok Warren so lets just make a component and build it that way from there. First-
 The component is article
 you feed your component data[] with the different article{five parts in each}
 
-function createArticle(data) {
-  let articleDiv = document.createElement('div')
-  articleDiv.classList.add('article')
-  let articleTitle = document.createElement('h2')
-  articleTitle.textContent(title)
-  let articleDate = document.createElement('p')
-  articleDate.classList.add('date')
-  articleDate.textContent(date)
-  let para1 = document.createElement('p')
-  para1.textContent(firstParagraph)
-  let para2 = document.createElement('p')
-  para2.textContent(secondParagraph)
-  let para3 = document.createElement('p')
-  para3.textContent(thirdParagraph)
-  let expandBtn = document.createElement('span')
-  expandBtn.classList.add('expandButton')
-  expandBtn.textContent('expand')
-
-
-  article.appendChild(articleDiv)
-  articleDiv.appendChild(articleTitle)
-  articleDiv.appendChild(articleDate)
-  articleDiv.appendChild(para1)
-  articleDiv.appendChild(para2)
-  articleDiv.appendChild(para3)
-
-}
-
-
-
-
-
-
-
-function textCreator(text) {
-  const span = document.createElement('span')
-  span.textContent = text
-  span.style.color = 'white'
-  
-  return span
-}
-
-
-
-
-
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
 
@@ -162,3 +116,32 @@ function textCreator(text) {
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+function createArticle(dataSource) {
+    let articleDiv = document.createElement('div')
+    articleDiv.classList.add('article')
+    let articleTitle = document.createElement('h2')
+    articleTitle.textContent = data.title
+    let articleDate = document.createElement('p')
+    articleDate.classList.add('date')
+    articleDate.textContent = data.date
+    let para1 = document.createElement('p')
+    para1.textContent = data.firstParagraph
+    let para2 = document.createElement('p')
+    para2.textContent = data.secondParagraph
+    let para3 = document.createElement('p')
+    para3.textContent = data.thirdParagraph
+    let expandBtn = document.createElement('span')
+    expandBtn.classList.add('expandButton')
+    expandBtn.textContent = 'expand'
+
+
+    articleDiv.appendChild(articleTitle)
+    articleDiv.appendChild(articleDate)
+    articleDiv.appendChild(para1)
+    articleDiv.appendChild(para2)
+    articleDiv.appendChild(para3)
+
+    return articleDiv
+}
+createArticle(data[0])
+    //This needs to be a data.forEach  possible MAP  that will make an array of nodes to push out.
