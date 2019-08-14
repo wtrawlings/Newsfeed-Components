@@ -112,17 +112,26 @@ function createArticle(data) {
   let articleDate = document.createElement('p')
   articleDate.classList.add('date')
   articleDate.textContent(date)
-  
+  let para1 = document.createElement('p')
+  para1.textContent(firstParagraph)
+  let para2 = document.createElement('p')
+  para2.textContent(secondParagraph)
+  let para3 = document.createElement('p')
+  para3.textContent(thirdParagraph)
+  let expandBtn = document.createElement('span')
+  expandBtn.classList.add('expandButton')
+  expandBtn.textContent('expand')
 
 
-
-
-
-  articleDiv.appendChild('h2')
-  articleDiv.appendChild('p')
+  article.appendChild(articleDiv)
+  articleDiv.appendChild(articleTitle)
+  articleDiv.appendChild(articleDate)
+  articleDiv.appendChild(para1)
+  articleDiv.appendChild(para2)
+  articleDiv.appendChild(para3)
 
 }
-article.appendChild()
+
 
 
 
