@@ -84,6 +84,20 @@ const data = [{
         thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+    },
+    {
+        title: 'Warren\'s Creative thing',
+        date: 'Jan 1st, 2019',
+        firstParagraph: `Warren, will you ever be able to get this stuff done? I think so! `,
+
+        secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+        thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
     }
 ];
 
@@ -111,6 +125,8 @@ const data = [{
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+/*
 function createArticle(dataSource) {
 
     let articleDiv = document.createElement('div')
@@ -141,4 +157,57 @@ function createArticle(dataSource) {
 
 }
 
-data.forEach(createArticle())
+const domElements = data.map(createArticle())
+*/
+
+const createComponent = content => {
+    const div = document.createElement('div');
+    div.classList.add('article');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = content.title;
+
+    const date = document.createElement('p');
+    date.classList.add('date');
+    date.textContent = content.date;
+
+    const paragraphs = [];
+    for (let i = 0, i < 3, i++) {
+        paragraphs.push(document.createElement('p'))
+    }
+
+    const span = document.createElement('span');
+
+    div.appendChild(h2);
+    div.appendChild(date);
+    paragraphs.forEach(p => div.appendChild(p))
+    div.appendChild(span);
+
+    return div
+}
+console.log(createComponent())
+
+
+
+
+//MENU SECTION
+// const createMenu = array => {
+//     const div = document.createElement('div');
+//     div.classList.add('menu');
+
+//     const ul = document.createElement('ul');
+
+//     let li;
+//     for (let i = 0, i < array.length, i++) {
+//         li = document.createElement('li');
+//         li.textContent = array[i];
+//         lis.push(li);
+//     }
+//     lis.forEach(listItem = .ul.appendChild(listItem));
+
+//     return div;
+// }
+// console.log(createMenu(menuItems))
+
+// const menuButton = document.querySelector('.menu-button');
+// menuButton.
