@@ -22,20 +22,41 @@ let menuItems = [
   Pass the function an array as it's only argument.
 */
 const createMenu = array => {
-    const div = createElement('div');
+    const div = document.createElement('div');
     div.classList.add('menu');
 
     const ul = document.createElement('ul');
 
     const lis = [];
+    let li;
+    //we moved let LI out of the function so it doesn't have to be 
+    //remade every time we do this- it happens once
     for (let i = 0; i < array.length; i++) {
-        let li = docuemnt.createElement('li');
+        li = document.createElement('li');
         li.textContent = array[i];
         lis.push(li);
     }
-}
 
-return div;
+    lis.forEach(listItem => ul.appendChild(listItem));
+    div.appendChild(ul);
+    //here is the other way
+    // ul.append(...lis);
+    //div.appendChild(ul);
+
+    return div;
+}
+console.log(createMenu(menuItems))
+
+const menu = createMenu(menuItems);
+
+document.querySelector('.header').append(menu);
+
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', event => {
+    event.preventDefault();
+    menu.classList.toggle('menu--open')
+
+})
 
 
 
