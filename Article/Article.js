@@ -165,7 +165,7 @@ const createComponent = content => {
     div.classList.add('article');
 
     const h2 = document.createElement('h2');
-    h2.textContent = content.title;
+    //h2.textContent = content.title;
 
     const date = document.createElement('p');
     date.classList.add('date');
@@ -175,8 +175,13 @@ const createComponent = content => {
     for (let i = 0; i < 3; i++) {
         paragraphs.push(document.createElement('p'))
     }
+    paragraphs[0].textContent = content.firstParagraph;
+    paragraphs[1].textContent = content.secondParagraph;
+    paragraphs[2].textContent = content.thirdParagraph;
 
     const span = document.createElement('span');
+    span.classList.add('expandButton');
+    span.textContent = "expand";
 
     div.appendChild(h2);
     div.appendChild(date);
@@ -185,7 +190,16 @@ const createComponent = content => {
 
     return div
 }
-console.log(createComponent())
+
+
+
+console.log(createComponent(data))
+    //this console.log shows up  as
+    //console.log(createComponent())
+    //but I had to ADD the data argument when it was originally blank
+    //without it DATE and TITLE throw undefined errors
+
+//iterate over data
 
 
 
