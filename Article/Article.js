@@ -179,24 +179,24 @@ data.forEach(content => {
 
 
 
-MENU SECTION
-const createMenu = array => {
-    const div = document.createElement('div');
-    div.classList.add('menu');
+// MENU SECTION
+// const createMenu = array => {
+//     const div = document.createElement('div');
+//     div.classList.add('menu');
 
-    const ul = document.createElement('ul');
+//     const ul = document.createElement('ul');
 
-    let li;
-    for (let i = 0, i < array.length, i++) {
-        li = document.createElement('li');
-        li.textContent = array[i];
-        lis.push(li);
-    }
-    lis.forEach(listItem = .ul.appendChild(listItem));
+//     let li;
+//     for (let i = 0, i < array.length, i++) {
+//         li = document.createElement('li');
+//         li.textContent = array[i];
+//         lis.push(li);
+//     }
+//     lis.forEach(listItem = .ul.appendChild(listItem));
 
-    return div;
-}
-console.log(createMenu(menuItems))
+//     return div;
+// }
+// console.log(createMenu(menuItems))
 
-const menuButton = document.querySelector('.menu-button');
-menuButton.
+// const menuButton = document.querySelector('.menu-button');
+// menuButton.
