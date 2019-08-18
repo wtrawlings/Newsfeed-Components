@@ -49,7 +49,7 @@ console.log(createMenu(menuItems))
 
 const menu = createMenu(menuItems);
 
-document.querySelector('.articles').append(menu);
+document.querySelector('.header').append(menu);
 
 const menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', event => {
