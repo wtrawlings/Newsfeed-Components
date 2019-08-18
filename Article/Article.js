@@ -126,46 +126,13 @@ const data = [{
 
 */
 
-/*
-function createArticle(dataSource) {
-
-    let articleDiv = document.createElement('div')
-    articleDiv.classList.add('article')
-    let articleTitle = document.createElement('h2')
-    articleTitle.textContent = data.title
-    let articleDate = document.createElement('p')
-    articleDate.classList.add('date')
-    articleDate.textContent = data.date
-    let para1 = document.createElement('p')
-    para1.textContent = data.firstParagraph
-    let para2 = document.createElement('p')
-    para2.textContent = data.secondParagraph
-    let para3 = document.createElement('p')
-    para3.textContent = data.thirdParagraph
-    let expandBtn = document.createElement('span')
-    expandBtn.classList.add('expandButton')
-    expandBtn.textContent = 'expand'
-
-
-    articleDiv.appendChild(articleTitle)
-    articleDiv.appendChild(articleDate)
-    articleDiv.appendChild(para1)
-    articleDiv.appendChild(para2)
-    articleDiv.appendChild(para3)
-
-    return articleDiv
-
-}
-
-const domElements = data.map(createArticle())
-*/
 
 const createComponent = content => {
     const div = document.createElement('div');
     div.classList.add('article');
 
     const h2 = document.createElement('h2');
-    //h2.textContent = content.title;
+    h2.textContent = content.title;
 
     const date = document.createElement('p');
     date.classList.add('date');
@@ -182,6 +149,12 @@ const createComponent = content => {
     const span = document.createElement('span');
     span.classList.add('expandButton');
     span.textContent = "expand";
+    span.addEventListener('click', event => {
+        event.preventDefault();
+        //prevent default on listeners just in case the normal behavior
+        //doesn't work for you
+        div.classList.toggle('article-open');
+    })
 
     div.appendChild(h2);
     div.appendChild(date);
@@ -191,15 +164,12 @@ const createComponent = content => {
     return div
 }
 
+const articlesDiv = document.querySelector('.articles');
+data.forEach(content => articlesDiv.append(createComponent(content)));
 
-
-console.log(createComponent(data))
-    //this console.log shows up  as
-    //console.log(createComponent())
-    //but I had to ADD the data argument when it was originally blank
-    //without it DATE and TITLE throw undefined errors
-
-//iterate over data
+//this was a map function. Map is a little weird because of formatting but it is saying that
+//we are using the data object and mapping that as the argument of 
+//content in the createComponent thing
 
 
 
