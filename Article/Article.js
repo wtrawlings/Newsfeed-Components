@@ -172,7 +172,7 @@ const createComponent = content => {
     date.textContent = content.date;
 
     const paragraphs = [];
-    for (let i = 0, i < 3, i++) {
+    for (let i = 0; i < 3; i++) {
         paragraphs.push(document.createElement('p'))
     }
 
