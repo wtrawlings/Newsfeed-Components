@@ -90,14 +90,9 @@ const data = [{
         date: 'Jan 1st, 2019',
         firstParagraph: `Warren, will you ever be able to get this stuff done? I think so! `,
 
-        secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
-        hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
-        hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
-        hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+        secondParagraph: `Alright, the path forward from here is to use every weekend hour I can to work on REACT. I already have tried and failed last weekend. This time I am going to use a repo from someone that already had their REACT work. Hopefully, this will work better than the direct NPX download version. Max Keller is going to be my partner for this.`,
 
-        thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-        Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+        thirdParagraph: `Next, I have a lot of different possible tutorials for making a todo list. I want to make one that I can use in conjunction with the main Wunderlist project for Lambda School. They want a ToDo list that can have a log in. That login can communicate with other people on a team and assign things and coordinate things on a calendar. That is the minimum. The interface has to be AWESOME!!!`
     }
 ];
 
