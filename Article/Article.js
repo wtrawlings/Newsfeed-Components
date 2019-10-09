@@ -86,7 +86,7 @@ const data = [{
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
     },
     {
-        title: 'Warren\'s Creative thing',
+        title: "Warren's Creative thing",
         date: 'Jan 1st, 2019',
         firstParagraph: `Warren, will you ever be able to get this stuff done? I think so! `,
 
@@ -121,8 +121,7 @@ const data = [{
 
 */
 
-
-const createComponent = content => {
+const createComponent = (content) => {
     const div = document.createElement('div');
     div.classList.add('article');
 
@@ -135,44 +134,45 @@ const createComponent = content => {
 
     const paragraphs = [];
     for (let i = 0; i < 3; i++) {
-        paragraphs.push(document.createElement('p'))
+        paragraphs.push(document.createElement('p'));
     }
     paragraphs[0].textContent = content.firstParagraph;
     paragraphs[1].textContent = content.secondParagraph;
     paragraphs[2].textContent = content.thirdParagraph;
-
+    //I want to make this programmatic so if there are more than 3
+    //paragraphs it will show properly
+    //how do I detect the paragraph within first/second/thirdparagraph
+    //then make that into an array and still hold and implant it into
+    //the paragraphs area?
     const span = document.createElement('span');
     span.classList.add('expandButton');
-    span.textContent = "expand";
-    span.addEventListener('click', event => {
+    span.textContent = 'expand';
+    span.addEventListener('click', (event) => {
         event.preventDefault();
         //prevent default on listeners just in case the normal behavior
         //doesn't work for you
         div.classList.toggle('article-open');
-    })
-
+    });
+    //here's the assembly for appending everything.
     div.appendChild(h2);
     div.appendChild(date);
-    paragraphs.forEach(p => div.appendChild(p))
+    paragraphs.forEach((p) => div.appendChild(p));
     div.appendChild(span);
 
-    return div
-}
+    return div;
+};
 
 const articlesDiv = document.querySelector('.articles');
 //data.forEach(content => articlesDiv.append(createComponent(content)));
 //this was a map function. Map is a little weird because of formatting
-//but it is saying that we are using the data object and mapping that 
+//but it is saying that we are using the data object and mapping that
 //as the argument of content in the createComponent thing
-data.forEach(content => {
-        const newElement = createComponent(content);
-        articlesDiv.append(newElement);
-    })
-    //this is the normal way of doing it. I had to add a new container 
-    //variable to make it work and pass in the data for NEW ELEMENT
-
-
-
+data.forEach((content) => {
+    const newElement = createComponent(content);
+    articlesDiv.append(newElement);
+});
+//this is the normal way of doing it. I had to add a new container
+//variable to make it work and pass in the data for NEW ELEMENT
 
 // MENU SECTION
 // const createMenu = array => {
